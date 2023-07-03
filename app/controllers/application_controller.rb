@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
         # Your specific page logic here
     end
 
+    def after_sign_in_path_for(resource)
+        # dashboard_path # Replace with the desired path
+    end
+
     protected
 
   def configure_permitted_parameters

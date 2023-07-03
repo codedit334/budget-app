@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # root to: 'home#index'
+  root 'splash#index'
+  resources :categories do
+    resources :transactions, only: [:show]
+  end
 end
