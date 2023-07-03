@@ -1,6 +1,6 @@
 class ItsTransactionsController < ApplicationController
     def index
-      @category = current_user.categories.find(params[:category_id])
+      @category = current_user.categories.includes(its_transactions: :author).find(params[:category_id])
       @its_transactions = @category.its_transactions.order(created_at: :desc)
       @total_amount = @category.its_transactions.sum(:amount)
     end

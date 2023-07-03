@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
     def index
-      @categories = current_user.categories || []
+      @categories = current_user.categories.includes(:its_transactions) || []
       @total_amount = @categories.sum do |category|
         category.its_transactions.sum(:amount)
       end
