@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :its_transactions, foreign_key: 'author_id'
-end
+
   
+  has_many :categories
+end
+
+#   has_many :categories, through: :its_transactions
