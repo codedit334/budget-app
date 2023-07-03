@@ -1,14 +1,10 @@
 class ApplicationController < ActionController::Base
     include Devise::Controllers::Helpers
     before_action :configure_permitted_parameters, if: :devise_controller?
-    before_action :authenticate_user!, except: [:specific_page]
-
-    def specific_page
-        # Your specific page logic here
-    end
+    before_action :authenticate_user!
 
     def after_sign_in_path_for(resource)
-        # dashboard_path # Replace with the desired path
+      categories_path
     end
 
     protected

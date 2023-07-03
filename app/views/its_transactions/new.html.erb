@@ -1,0 +1,16 @@
+<h1>Add a new itstransaction</h1>
+
+<%= form_with(model: [@category, @transaction], url: category_its_transactions_path(@category)) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :amount %>
+  <%= form.number_field :amount %>
+
+  <%= form.label :category %>
+  <%= form.collection_select :category_id, current_user.categories, :id, :name %>
+
+  <%= form.submit "Save" %>
+<% end %>
+
+<%= link_to "Back", category_its_transactions_path(@category) %>

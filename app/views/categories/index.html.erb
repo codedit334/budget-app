@@ -1,13 +1,12 @@
 <h1>Categories</h1>
-
+<h3>Total Expenses: <%= @total_amount%></h3>
 <% @categories.each do |category| %>
   <div>
     <h3><%= category.name %></h3>
     <img src="<%= category.icon %>" alt="Category Icon">
     <p>Total Amount: <%= category.its_transactions.sum(:amount) %></p>
-    <%= link_to "View Transactions"  %>
+    <%= link_to "View Transactions", category_its_transactions_path(category)  %>
   </div>
 <% end %>
 
 <%= link_to "Add a New Category", new_category_path %>
-<%# , category_transactions_path(category) %>
