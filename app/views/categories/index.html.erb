@@ -3,10 +3,11 @@
 <% @categories.each do |category| %>
   <div>
     <h3><%= category.name %></h3>
-    <p>Icon: <%= category.icon %></p>
+    <img src="<%= category.icon %>" alt="Category Icon">
     <p>Total Amount: <%= category.its_transactions.sum(:amount) %></p>
-    <%= link_to "View Transactions", category_transactions_path(category) %>
+    <%= link_to "View Transactions"  %>
   </div>
 <% end %>
 
 <%= link_to "Add a New Category", new_category_path %>
+<%# , category_transactions_path(category) %>
