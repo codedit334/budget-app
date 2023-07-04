@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :its_transactions, foreign_key: 'author_id'
 
   has_many :categories
+
+  validates :name, presence: true
+  validates :email, presence: true
 end

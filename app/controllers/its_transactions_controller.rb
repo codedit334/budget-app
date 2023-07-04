@@ -12,8 +12,13 @@ class ItsTransactionsController < ApplicationController
   
     def create
       @transaction = current_user.its_transactions.new(amount: transaction_params[:amount], name: transaction_params[:name])
-      @category = current_user.categories.find(transaction_params[:category_id])
-      @category.its_transactions << @transaction
+      category_ids = transaction_params[:category_ids]&.compact&.drop(1) || [] 
+      category_ids.each do |category_id|
+        if category_id 
+          @category = current_user.categories.find(category_id)
+          @category.its_transactions << @transaction
+        end
+      end
       set_category()
   
       if @transaction.save
@@ -30,6 +35,8 @@ class ItsTransactionsController < ApplicationController
     end
   
     def transaction_params
-      params.require(:its_transaction).permit(:name, :amount, :category_id)
+      # params.require(:its_transaction).permit(:name, :amount, :category_id)
+      params.require(:its_transaction).permit(:name, :amount, category_ids: [])
+
     end
 end

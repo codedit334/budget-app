@@ -7,8 +7,8 @@
   <%= form.label :amount %>
   <%= form.number_field :amount %>
 
-  <%= form.label :category %>
-  <%= form.collection_select :category_id, current_user.categories, :id, :name %>
+  <%= form.label :categories %>
+  <%= form.collection_select :category_ids, current_user.categories, :id, :name, {}, multiple: true %>
 
   <%= form.submit "Save" %>
 <% end %>
