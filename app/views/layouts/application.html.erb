@@ -8,12 +8,29 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bluecliff: '#3778c2',
+              green1: '#5fb523',
+              grey1: '#434b54',
+            }
+          }
+        }
+      }
+    </script>
   </head>
 
-  <body>
+  <body class="bg-gray-100">
     <header>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
     </header>
     <%= yield %>
   </body>

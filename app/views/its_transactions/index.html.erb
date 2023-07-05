@@ -1,0 +1,27 @@
+<div class="flex justify-between items-center h-11 bg-[#3778c2] text-white"> 
+    <div class="ml-4 cursor-pointer">
+      <%= link_to "<", authenticated_root_path %>
+    </div>
+    <h2 class="uppercase">
+      Trasactions
+    </h2>
+    <div class="actions mr-4 cursor-pointer text-lg">
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </div>
+</div>
+<div class="w-full bg-white border-1 border-t-gray-300 border-b-gray-300 border-l-white border-r-white h-9 flex justify-between items-center mb-10" >
+  <h3 class="text-gray-400 ml-3">Total Expenses:</h3>
+  <b class="text-[#434b54] mr-3">$<%= @total_amount%></b>
+</div>
+
+<div class="min-h-screen">
+  <% @its_transactions.each do |transaction| %>
+    <div class="w-11/12 my-3 h-26 m-auto p-5  flex items-center justify-between border-1 border-gray-400 bg-white text-gray-400">
+      <p>Transaction Name: <b class="text-[#434b54]"><%= transaction.name %></b></p>
+      <p>Transaction Amount: <b class="text-[#434b54]">$<%= transaction.amount %></b></p>
+    </div>
+  <% end %>
+</div>
+<div class="w-full h-16 bg-[#5fb523] mt-10 text-white flex items-center justify-center">
+  <%= link_to "Add New Transaction", new_category_its_transaction_path(@category), method: :delete, class: "border-2 border-white text-white p-2 px-4" %> 
+</div>

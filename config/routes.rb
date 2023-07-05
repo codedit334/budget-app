@@ -3,10 +3,17 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
-  # root to: 'home#index'
-  root 'splash#index'
+
+  authenticated :user do
+    root to: 'categories#index', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root to: 'splash#index', as: :unauthenticated_root
+  end
+  # root 'splash#index'
   resources :categories do
-    resources :transactions, only: [:show]
+    resources :its_transactions
   end
 end
+# resources :transactions, only: [:show]

@@ -1,0 +1,34 @@
+
+ <div class="flex justify-between items-center h-11 bg-[#3778c2] text-white"> 
+    <div class="ml-4 cursor-pointer">
+      <%= link_to "<", authenticated_root_path %>
+    </div>
+    <h2 class="uppercase">
+      Categories
+    </h2>
+    <div class="actions mr-4 cursor-pointer text-lg">
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+    </div>
+</div>
+<div class="w-full bg-white border-1 border-t-gray-300 border-b-gray-300 border-l-white border-r-white h-9 flex justify-between items-center mb-10" >
+  <h3 class="text-gray-400 ml-3">Total Expenses:</h3>
+  <b class="text-[#434b54] mr-3">$<%= @total_amount%></b>
+</div>
+<div class="min-h-screen">
+  <% @categories.each do |category| %>
+    <div class="w-11/12 my-3 h-26 m-auto p-5  flex items-center justify-between border-1 border-gray-400 bg-white text-gray-400">
+      <a href="<%= category_its_transactions_path(category) %>">
+        <img src="<%= category.icon %>" class="w-20 h-20" alt="Category Icon">
+      </a>
+      <div>
+        <h3 class="pb-5"><%= link_to category.name, category_its_transactions_path(category)  %></h3>
+        <h4><%= category.created_at.strftime("%e %B %Y") %></h4>
+      </div>
+      <b class="text-[#434b54] pb-5">$<%= category.its_transactions.sum(:amount) %></b>
+    </div>
+  <% end %>
+</div>
+
+<div class="w-full h-16 bg-[#5fb523] mt-10 text-white flex items-center justify-center">
+  <%= link_to "Add New Category", new_category_path, method: :delete, class: "border-2 border-white text-white p-2 px-4" %> 
+</div>
