@@ -6,8 +6,8 @@
     <h2 class="uppercase">
       Categories
     </h2>
-    <div class="actions mr-4 cursor-pointer text-2xl">
-      <%= link_to "+", new_category_path %>
+    <div class="actions mr-4 cursor-pointer text-lg">
+      <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
     </div>
 </div>
 <div class="w-full bg-white border-1 border-t-gray-300 border-b-gray-300 border-l-white border-r-white h-9 flex justify-between items-center mb-10" >
@@ -29,6 +29,6 @@
   <% end %>
 </div>
 
-<div class="w-full h-14 uppercase bg-[#5fb523] mt-10 text-white flex items-center justify-center">
-  <%= button_to "Sign Out", destroy_user_session_path,class: "uppercase", method: :delete %> 
+<div class="w-full h-16 bg-[#5fb523] mt-10 text-white flex items-center justify-center">
+  <%= link_to "Add New Category", new_category_path, method: :delete, class: "border-2 border-white text-white p-2 px-4" %> 
 </div>
