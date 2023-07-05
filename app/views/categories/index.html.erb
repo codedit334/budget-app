@@ -14,7 +14,7 @@
   <h3 class="text-gray-400 ml-3">Total Expenses:</h3>
   <b class="text-[#434b54] mr-3">$<%= @total_amount%></b>
 </div>
-<div>
+<div class="min-h-screen">
   <% @categories.each do |category| %>
     <div class="w-11/12 my-3 h-26 m-auto p-5  flex items-center justify-between border-1 border-gray-400 bg-white text-gray-400">
       <a href="<%= category_its_transactions_path(category) %>">
@@ -30,5 +30,5 @@
 </div>
 
 <div class="w-full h-14 uppercase bg-[#5fb523] mt-10 text-white flex items-center justify-center">
-  Scan
+  <%= button_to "Sign Out", destroy_user_session_path,class: "uppercase", method: :delete %> 
 </div>

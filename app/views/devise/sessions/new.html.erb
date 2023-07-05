@@ -13,11 +13,11 @@
 
   <div class="flex flex-col items-end justify-center w-full bg-white border-2 border-t-gray-400  border-b-gray-400">
   <div class="field w-11/12">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email" , class: "mb-2 h-10 w-full border-2 border-l-white border-t-white border-b-gray-400  text-gray-400 outline-none" %>
+    <%= f.email_field :email, required: true , autofocus: true, autocomplete: "email", placeholder:"Email" , class: "mb-2 h-10 w-full border-2 border-l-white border-t-white border-b-gray-400  text-gray-400 outline-none" %>
   </div>
 
   <div class="field w-11/12">
-    <%= f.password_field :password, placeholder: "Password", autocomplete: "new-password", class: "mt-2 h-10 w-full border-2 border-l-white border-t-gray-400 border-b-white  text-gray-400 outline-none" %>
+    <%= f.password_field :password, required: true , placeholder: "Password", autocomplete: "new-password", class: "mt-2 h-10 w-full border-2 border-l-white border-t-gray-400 border-b-white  text-gray-400 outline-none" %>
   </div>
 
   </div>
