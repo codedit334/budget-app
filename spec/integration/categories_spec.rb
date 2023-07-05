@@ -6,7 +6,6 @@ RSpec.describe CategoriesController, type: :controller do
 
   let(:user) { FactoryBot.create(:user, email: 'oussama_elabdioui@hotmail.com') }
 
-
   describe 'GET #index' do
     it 'assigns @categories and @total_amount' do
       #   user = FactoryBot.create(:user)
