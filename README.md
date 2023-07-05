@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-  <h3><b>Recipe App</b></h3>
+  <h3><b>MoneyGem</b></h3>
 
 # 📗 Table of Contents
 
@@ -22,9 +22,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Recipe-App] <a name="about-project"></a>
+# 📖 [Money-Gem] <a name="about-project"></a>
 
-**[Recipe-App]** Recipe is a web application that allows users to create, read, update, and delete owned foods, recipes, and shopping lists. Users can sign up for an account to use the app.
+**[Money-Gem]** is a web application that allows users to create, read and delete owned categories and transactions made withing them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,17 +45,16 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add new food]**
-- **[Add new recipe]**
-- **[Make the recipe either public or private]**
-- **[Generate shopping list]**
+- **[Add new Category]**
+- **[Add new Transaction]**
+- **[Sum individual Category expenses]**
+- **[Sum all Categories expenses]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Live Demo <a name="live-demo"></a>
 
-- [Link](https://recipe-app-oe-eo.onrender.com
-)
+- [Comming-soon]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -70,7 +69,7 @@ Ruby version >= 3.0.0
 Clone this repository to your desired folder:
 sh
   cd my-folder
- git clone https://github.com/codedit334/RoR_Group_Project.git
+ git clone https://github.com/codedit334/budget-app.git
 
  ### Install:
  Run: bundle install
@@ -95,17 +94,11 @@ sh
 - LinkedIn: [Oussama Elabdioui](https://www.linkedin.com/in/oussama-elabdioui-4677a41b6/)
 
 
-👤 **Emmanuel Obi**
-- GitHub: [@Gmanlove](https://github.com/Gmanlove)
-- LinkedIn: [Obi Emmanuel](https://www.linkedin.com/in/emmanuelgozieobi/)
-- Twitter: [@brightgman2](https://twitter.com/brightgman2)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Search for recipes]**
-- [ ] **[Deploy the app]**
+- [ ] **[Add slide menu]**
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +106,7 @@ sh
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/codedit334/RoR_Group_Project/issues).
+Feel free to check the [issues page](https://github.com/codedit334/budget-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
