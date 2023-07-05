@@ -8,7 +8,6 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #index' do
     it 'assigns @categories and @total_amount' do
-      #   user = FactoryBot.create(:user)
       category1 = FactoryBot.create(:category, user:)
       category2 = FactoryBot.create(:category, user:)
       its_transaction1 = FactoryBot.create(:its_transaction, author: user)
