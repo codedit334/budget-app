@@ -14,18 +14,20 @@
  *= require_self
  */
 
- @font-face {
-    font-family: 'proximovaBold';
-    src: url('../fonts/Fontspring-DEMO-proximanova-bold.otf');
-    font-family: 'proximovaLight';
-    src: url('../fonts/Fontspring-DEMO-proximanovaexcn-light.otf');
- }
+@font-face {
+  font-family: 'proximovaBold';
+  src: url('../fonts/Fontspring-DEMO-proximanova-bold.otf');
+  font-family: 'proximovaLight';
+  src: url('../fonts/Fontspring-DEMO-proximanovaexcn-light.otf');
+}
 
- body {
-    font-family: 'proximovalight', sans-serif;
- }
+body {
+  font-family: 'proximovalight', sans-serif;
+}
 
- h1, h2, h3, h4 {
-    font-family: 'proximovaBold', sans-serif;
- }
- 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'proximovaBold', sans-serif;
+}
