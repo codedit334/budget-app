@@ -1,16 +1,29 @@
-<h1>Add a new itstransaction</h1>
-
 <%= form_with(model: [@category, @transaction], url: category_its_transactions_path(@category)) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+  <div class="flex justify-between items-center h-11 bg-[#3778c2] text-white mb-10"> 
+    <div class="ml-4 cursor-pointer">
+      <%= link_to "<", category_its_transactions_path(@category) %>
+    </div>
+    <h2 class="uppercase">
+      New Transaction
+    </h2>
+    <div class="actions mr-4 cursor-pointer">
+      <%= form.submit 'Save' %>
+    </div>
+  </div>
 
-  <%= form.label :amount %>
-  <%= form.number_field :amount %>
+  <div class="flex flex-col items-end justify-center w-full bg-white border-2 border-t-gray-400  border-b-gray-400">
+  <div class="field w-11/12">
+    <%= form.text_field :name, placeholder: "Name", autocomplete: "name", class: "mb-2 h-10 w-full border-2 border-l-white border-b-gray-400 border-t-white  text-gray-400 outline-none" %>
+  </div>
 
-  <%= form.label :categories %>
-  <%= form.collection_select :category_ids, current_user.categories, :id, :name, {}, multiple: true %>
+  <div class="field w-11/12">
+    <%= form.text_field :amount, placeholder: "Amount", autocomplete: "amount", class: "mb-2 h-10 w-full border-2 border-l-white border-b-gray-400 border-t-gray-400  text-gray-400 outline-none" %>
+  </div>
 
-  <%= form.submit "Save" %>
+  <div class="field w-11/12">
+    <%= form.label :categories %>
+    <%= form.collection_select :category_ids, current_user.categories, :id, :name, {}, multiple: true, class: "mt-2 h-18 w-full border-2 border-l-white border-b-white border-t-gray-400  text-gray-400 outline-none" %>
+  </div>
+  </div>
+
 <% end %>
-
-<%= link_to "Back", category_its_transactions_path(@category) %>

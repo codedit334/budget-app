@@ -1,12 +1,22 @@
-<h1>ItsTransactions Page</h1>
-
-<p>Total Amount: <%= @total_amount %></p>
-
+<div class="flex justify-between items-center h-11 bg-[#3778c2] text-white"> 
+    <div class="ml-4 cursor-pointer">
+      <%= link_to "<", authenticated_root_path %>
+    </div>
+    <h2 class="uppercase">
+      Trasactions
+    </h2>
+    <div class="actions mr-4 cursor-pointer text-2xl">
+      <%= link_to "+", new_category_its_transaction_path(@category) %>
+    </div>
+</div>
+<div class="w-full bg-white border-1 border-t-gray-300 border-b-gray-300 border-l-white border-r-white h-9 flex justify-between items-center mb-10" >
+  <h3 class="text-gray-400 ml-3">Total Expenses:</h3>
+  <b class="text-[#434b54] mr-3">$<%= @total_amount%></b>
+</div>
 <% @its_transactions.each do |transaction| %>
-  <p>Transaction Name: <%= transaction.name %></p>
-  <p>Transaction Amount: <%= transaction.amount %></p>
+  <div class="w-11/12 my-3 h-26 m-auto p-5  flex items-center justify-between border-1 border-gray-400 bg-white text-gray-400">
+    <p>Transaction Name: <b class="text-[#434b54]"><%= transaction.name %></b></p>
+    <p>Transaction Amount: <b class="text-[#434b54]">$<%= transaction.amount %></b></p>
+  </div>
 <% end %>
 
-<%= link_to "Add a new transaction", new_category_its_transaction_path(@category) %>
-
-<%= link_to "Back", categories_path %>

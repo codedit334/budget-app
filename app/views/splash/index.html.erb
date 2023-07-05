@@ -1,5 +1,9 @@
-<h1>Welcome to MONEYGEM</h1>
-<p>A simple and efficient way to manage your finances.</p>
-
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Log in", new_user_session_path %>
+<div class="h-screen">
+  <div class="h-3/4 flex items-center justify-center">
+    <h1 class="italic text-3xl">MONEYGEM</h1>
+  </div>
+  <div class="mx-auto w-11/12 flex flex-col items-center">
+    <%= link_to "Log in", new_user_session_path, class: "my-2 h-10 flex items-center justify-center w-full bg-[#3778c2] text-white hover:bg-white hover:text-gray-400 " %>
+    <%= link_to "Sign up", new_user_registration_path, class: "my-2 h-10 flex items-center justify-center w-full text-gray-400" %>
+  </div>
+</div>
