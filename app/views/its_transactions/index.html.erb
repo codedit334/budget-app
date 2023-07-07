@@ -9,16 +9,22 @@
       <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
     </div>
 </div>
-<div class="w-full bg-white border-1 border-t-gray-300 border-b-gray-300 border-l-white border-r-white h-9 flex justify-between items-center mb-10" >
+<div class="w-full bg-white border-2 border-t-gray-100 border-b-gray-100 border-l-white border-r-white h-9 flex justify-between items-center" >
+  <h3 class="text-gray-400 ml-3">Category: </h3>
+  <b class="text-[#434b54] mr-3" ><%= @category.name %></b>
+</div>
+<div class="w-full bg-white border-2 border-t-white border-b-gray-100 border-l-white border-r-white h-9 flex justify-between items-center mb-10" >
   <h3 class="text-gray-400 ml-3">Total Expenses:</h3>
   <b class="text-[#434b54] mr-3">$<%= @total_amount%></b>
 </div>
+
 
 <div class="min-h-screen">
   <% @its_transactions.each do |transaction| %>
     <div class="w-11/12 my-3 h-26 m-auto p-5  flex items-center justify-between border-1 border-gray-400 bg-white text-gray-400">
       <p>Transaction Name: <b class="text-[#434b54]"><%= transaction.name %></b></p>
       <p>Transaction Amount: <b class="text-[#434b54]">$<%= transaction.amount %></b></p>
+      <%= button_to "Delete", category_its_transaction_path(@category, transaction), method: :delete, data: { confirm: "Are you sure you want to delete this transaction?" } %>
     </div>
   <% end %>
 </div>

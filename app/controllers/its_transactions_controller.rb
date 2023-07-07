@@ -29,6 +29,13 @@ class ItsTransactionsController < ApplicationController
     end
   end
 
+  def destroy
+    category = Category.find(params[:category_id])
+    transaction = category.its_transactions.find(params[:id])
+    transaction.destroy
+    redirect_to category_its_transactions_path(category), notice: 'Transaction deleted successfully.'
+  end
+
   private
 
   def set_category
