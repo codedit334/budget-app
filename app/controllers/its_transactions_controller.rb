@@ -29,6 +29,21 @@ class ItsTransactionsController < ApplicationController
     end
   end
 
+  def edit
+    @category = current_user.categories.find(params[:category_id])
+    @transaction = current_user.its_transactions.find(params[:id])
+  end
+
+  def update
+    @category = current_user.categories.find(params[:category_id])
+    @transaction = current_user.its_transactions.find(params[:id])
+    if @transaction.update(amount: transaction_params[:amount], name: transaction_params[:name])
+      redirect_to category_its_transactions_path(@category), notice: 'Transaction updated successfully.'
+    else
+      render :edit
+    end
+  end
+
   def destroy
     category = Category.find(params[:category_id])
     transaction = category.its_transactions.find(params[:id])
