@@ -17,12 +17,7 @@
     </div>
 
     <div class="field w-[99%]">
-      <%= form.text_field :amount, placeholder: "Amount", required: true , autocomplete: "amount", class: "mb-2 h-10 w-full border-2 border-l-white text-gray-400 outline-none" %>
-    </div>
-
-    <div class="field w-[99%]">
-      <%= form.label :categories %>
-      <%= form.collection_select :category_ids, current_user.categories, :id, :name, {}, multiple: true, required: true,  class: "mt-2 h-18 w-full border-2 border-l-white border-b-white text-gray-400 outline-none" %>
+      <%= form.text_field :amount, placeholder: "Amount", required: true , autocomplete: "amount", class: "h-10 w-full border-2 border-l-white text-gray-400 outline-none" %>
     </div>
   </div>
 <% end %>

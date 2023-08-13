@@ -39,4 +39,19 @@
 
     <%= yield %>
   </body>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      hideNotice();
+    });
+
+    function hideNotice() {
+      const notification = document.querySelector('.notice')
+      if (notification) {
+        setInterval(function() {
+          notification.classList.add('fade');
+        }, 5000);
+      }
+    }
+  </script>
 </html>
